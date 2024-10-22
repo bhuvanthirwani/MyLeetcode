@@ -16,10 +16,9 @@ class Solution:
             undirected_graph[connection[1]][connection[0]] = 1
         
         visited = set()
-        global count
         count = 0
         def dfs(s):
-            global count
+            nonlocal count
             visited.add(s)
             for u in undirected_graph[s]:
                 if u not in visited:
