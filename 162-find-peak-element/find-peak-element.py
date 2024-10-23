@@ -5,7 +5,6 @@ class Solution:
             nonlocal nums
             while(l<=r):
                 mid = (l+r)//2
-                print("mid: ", mid)
                 if mid==n-1:
                     if nums[mid] < nums[mid-1]:
                         return mid-1
