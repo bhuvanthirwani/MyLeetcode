@@ -13,7 +13,7 @@ class Solution:
         def dfs(s, p):
             nonlocal cycle_vertex
             visited.add(s)
-            print("s, p", s, p)
+            # print("s, p", s, p)
             for u in graph[s]:
                 if u in visited and u!=p:
                     cycle_vertex = u
@@ -21,7 +21,7 @@ class Solution:
                     dfs(u, s)
             return
         dfs(edges[0][0], -1)
-        print('cycle_vertex', cycle_vertex)
+        # print('cycle_vertex', cycle_vertex)
         if cycle_vertex == None:
             return edges[-1]
         else:
