@@ -11,16 +11,17 @@ class Solution:
                 mv=max(mv,j-i+1)
             else:
                 t=D[s[j]]+1
-                D[s[j]]=j
+                
                 while(i!=t):
-                    if(s[i] in D):
-                        if(D[s[i]]<t):
-                            D.pop(s[i])
+                    if(D[s[i]]<t):
+                        D.pop(s[i])
                     else:
                         flag = 1
-                        print("KFSFF")
+                        print("KFSFF",s[j], s[i], D[s[i]])
                     i+=1
+                D[s[j]]=j
             #print(D)
+
             j+=1
             if flag == 1:
                 return 0
