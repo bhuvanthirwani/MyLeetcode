@@ -11,13 +11,8 @@ class Solution:
                 mv=max(mv,j-i+1)
             else:
                 t=D[s[j]]+1
-                
                 while(i!=t):
-                    if(D[s[i]]<t):
-                        D.pop(s[i])
-                    else:
-                        flag = 1
-                        print("KFSFF",s[j], s[i], D[s[i]])
+                    D.pop(s[i])
                     i+=1
                 D[s[j]]=j
             #print(D)
