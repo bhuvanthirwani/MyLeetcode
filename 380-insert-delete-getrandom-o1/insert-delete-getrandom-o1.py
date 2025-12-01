@@ -1,29 +1,31 @@
 class RandomizedSet:
 
     def __init__(self):
-        self.data_structure = set()
+        self.map = {}
+        self.A=[]
 
     def insert(self, val: int) -> bool:
-        if val in self.data_structure:
+        if val in self.map:
             return False
-        self.data_structure.add(val)
+        self.A.append(val)
+        self.map[val] = len(self.A) - 1
         return True
 
     def remove(self, val: int) -> bool:
-        if val in self.data_structure:
-            self.data_structure.remove(val)
+        if val in self.map:
+            idx = self.map[val]
+            last_val = self.A[len(self.A)-1]
+            self.A[idx] = last_val
+            self.A.pop()
+            self.map[last_val] = idx
+            del self.map[val]
+            
             return True
-        
         return False
 
     def getRandom(self) -> int:
-        n=len(self.data_structure)
-        k = random.randint(0, n-1)
-        count = 0
-        for i in self.data_structure:
-            if count == k:
-                return i
-            count += 1
+        return self.A[random.randint(0, len(self.A)-1)]
+        
         
 
 
