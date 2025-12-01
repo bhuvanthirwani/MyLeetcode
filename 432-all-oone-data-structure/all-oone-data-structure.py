@@ -92,7 +92,7 @@ class AllOne:
         )  # Return one of the keys from the tail's previous node
 
     def getMinKey(self) -> str:
-        if self.head.next == self.tail:
+        if self.tail.prev == self.head:
             return ""  # No keys exist
         return next(
             iter(self.head.next.keys)
